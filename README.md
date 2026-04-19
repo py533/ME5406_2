@@ -1,5 +1,15 @@
 # UR5 Robotic Grasping with Reinforcement Learning: SAC vs. TD3
 
+This project investigates the application of deep reinforcement learning to robotic manipulation, specifically training a UR5 robotic arm with a Robotiq 85 gripper to autonomously grasp objects in a physics-based simulation. Two state-of-the-art off-policy algorithms — **SAC (Soft Actor-Critic)** and **TD3 (Twin Delayed DDPG)** — are implemented and benchmarked head-to-head within a custom Gymnasium environment powered by PyBullet, providing a rigorous comparison of sample efficiency, stability, and final grasping performance.
+
+The learned policies are evaluated on reach success rate and grasp-and-lift success rate across thousands of episodes, with training curves and performance metrics visualised for analysis. Demo recordings of both trained agents are shown below.
+
+| SAC Demo | TD3 Demo |
+|---|---|
+| [▶ Watch SAC](demo/SAC_demo.webm) | [▶ Watch TD3](demo/TD3_demo.webm) |
+
+---
+
 PyBullet physics simulation of a UR5 arm with a Robotiq 85 gripper learning to grasp objects, benchmarking **SAC (Soft Actor-Critic)** against **TD3 (Twin Delayed DDPG)**.
 
 The robot observes the 2-D cube position and current end-effector position (4-D state), then outputs a 2-D target end-effector position. An episode succeeds when the gripper closes within 1 cm of the cube and lifts it above 0.80 m. Episodes run for up to 100 steps with a dense, distance-based reward.
