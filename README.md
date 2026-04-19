@@ -4,9 +4,10 @@ This project investigates the application of deep reinforcement learning to robo
 
 The learned policies are evaluated on reach success rate and grasp-and-lift success rate across thousands of episodes, with training curves and performance metrics visualised for analysis. Demo recordings of both trained agents are shown below.
 
-| SAC Demo | TD3 Demo |
-|---|---|
-| [▶ Watch SAC](demo/SAC_demo.webm) | [▶ Watch TD3](demo/TD3_demo.webm) |
+<table><tr>
+<td align="center"><b>SAC Demo</b><br><video src="demo/SAC_demo.webm" controls width="400"></video></td>
+<td align="center"><b>TD3 Demo</b><br><video src="demo/TD3_demo.webm" controls width="400"></video></td>
+</tr></table>
 
 ---
 
