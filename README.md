@@ -1,12 +1,27 @@
 # UR5 Robotic Grasping with Reinforcement Learning: SAC vs. TD3
 
-This project investigates the application of deep reinforcement learning to robotic manipulation, specifically training a UR5 robotic arm with a Robotiq 85 gripper to autonomously grasp objects in a physics-based simulation. Two state-of-the-art off-policy algorithms — **SAC (Soft Actor-Critic)** and **TD3 (Twin Delayed DDPG)** — are implemented and benchmarked head-to-head within a custom Gymnasium environment powered by PyBullet, providing a rigorous comparison of sample efficiency, stability, and final grasping performance.
+This project investigates deep reinforcement learning for robotic grasping, training a **UR5 arm** equipped with a **Robotiq 85 gripper** to autonomously pick up objects in a PyBullet physics simulation. The robot learns entirely from scratch — no pre-programmed motion plans — relying only on a compact 4-D observation (cube position + end-effector position) and a dense distance-based reward signal to discover successful grasp strategies through trial and error.
 
-The learned policies are evaluated on reach success rate and grasp-and-lift success rate across thousands of episodes, with training curves and performance metrics visualised for analysis. Demo recordings of both trained agents are shown below.
+Two state-of-the-art continuous-control algorithms are benchmarked head-to-head: **SAC (Soft Actor-Critic)**, an entropy-regularised off-policy method that naturally encourages exploration, and **TD3 (Twin Delayed DDPG)**, which addresses value overestimation through clipped double Q-learning and delayed policy updates. Both agents are trained for 20,000 environment steps and evaluated on reach success rate, grasp success rate, and sample efficiency, providing a direct comparison of their learning dynamics in a contact-rich manipulation task.
 
-| SAC Demo | TD3 Demo |
-|---|---|
-| [▶ Watch SAC](demo/SAC_demo.webm) | [▶ Watch TD3](demo/TD3_demo.webm) |
+---
+
+## Demo
+
+<table>
+  <tr>
+    <th align="center">SAC</th>
+    <th align="center">TD3</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <video src="demo/SAC_demo.webm" controls width="420">SAC demo</video>
+    </td>
+    <td align="center">
+      <video src="demo/TD3_demo.webm" controls width="420">TD3 demo</video>
+    </td>
+  </tr>
+</table>
 
 ---
 
