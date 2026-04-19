@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!-- local_profile: cylinder object variant for project-specific training -->
+<robot name="cylinder_orange_project_variant">
+  <link name="baseLink">
+    <contact>
+      <lateral_friction value="0.52"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.1"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0250" length="0.100"/>
+      </geometry>
+      <material name="cylinder_orange_local">
+        <color rgba="1.00 0.46 0.10 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0250" length="0.100"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

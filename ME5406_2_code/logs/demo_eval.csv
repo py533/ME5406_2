@@ -1,0 +1,3 @@
+algo,reach_rate,grasp_rate,n_episodes
+SAC,82.0,82.0,100
+TD3,100.0,100.0,100

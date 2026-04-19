@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<!-- local_profile: cube object used by ur5 grasp training -->
+<!-- local_profile: updated metadata to distinguish this project variant -->
+<robot name="cube_blue_project_variant">
+  <link name="baseLink">
+    <contact>
+      <lateral_friction value="980.0"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.08"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.080 0.040 0.050"/>
+      </geometry>
+      <material name="cube_blue_local">
+        <color rgba="0.00 0.00 1.00 1.00"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.080 0.040 0.050"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
