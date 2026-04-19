@@ -1,29 +1,8 @@
 # UR5 Robotic Grasping with Reinforcement Learning: SAC vs. TD3
 
-This project investigates deep reinforcement learning for robotic grasping, training a **UR5 arm** equipped with a **Robotiq 85 gripper** to autonomously pick up objects in a PyBullet physics simulation. The robot learns entirely from scratch — no pre-programmed motion plans — relying only on a compact 4-D observation (cube position + end-effector position) and a dense distance-based reward signal to discover successful grasp strategies through trial and error.
+Robotic grasping remains one of the core challenges in autonomous manipulation — translating high-level intent into precise, reliable physical interaction. This project investigates whether model-free deep reinforcement learning can train a UR5 robotic arm to grasp objects from scratch, without any hand-crafted motion planning or demonstrations. Two state-of-the-art continuous-control algorithms — **SAC (Soft Actor-Critic)** and **TD3 (Twin Delayed DDPG)** — are trained and evaluated head-to-head in a PyBullet physics simulation, with the goal of understanding their practical tradeoffs in a constrained manipulation task.
 
-Two state-of-the-art continuous-control algorithms are benchmarked head-to-head: **SAC (Soft Actor-Critic)**, an entropy-regularised off-policy method that naturally encourages exploration, and **TD3 (Twin Delayed DDPG)**, which addresses value overestimation through clipped double Q-learning and delayed policy updates. Both agents are trained for 20,000 environment steps and evaluated on reach success rate, grasp success rate, and sample efficiency, providing a direct comparison of their learning dynamics in a contact-rich manipulation task.
-
----
-
-## Demo
-
-<table>
-  <tr>
-    <th align="center">SAC</th>
-    <th align="center">TD3</th>
-  </tr>
-  <tr>
-    <td align="center">
-      <video src="demo/SAC_demo.webm" controls width="420">SAC demo</video>
-    </td>
-    <td align="center">
-      <video src="demo/TD3_demo.webm" controls width="420">TD3 demo</video>
-    </td>
-  </tr>
-</table>
-
----
+The robot must learn entirely from trial and error: it observes the cube's 2-D position and its own end-effector location, then decides where to move. A grasp succeeds only when the gripper closes within 1 cm of the cube and lifts it above 0.80 m — a tight criterion that demands both accurate reaching and reliable force-feedback grasping. By comparing sample efficiency, final success rate, and training stability between SAC and TD3, this work provides concrete guidance on algorithm selection for similar contact-rich manipulation problems.
 
 PyBullet physics simulation of a UR5 arm with a Robotiq 85 gripper learning to grasp objects, benchmarking **SAC (Soft Actor-Critic)** against **TD3 (Twin Delayed DDPG)**.
 
